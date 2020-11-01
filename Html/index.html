@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Екатерина Минец - официальный сайт</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style type="text/css"> /*Возможность прописывать css свойства в html документе*/
+  body {
+    padding-left: 100px;/*Внутренний отступ*/
+    padding-right: 100px;
+    font-family: Roboto;
+  }
+  header {
+      height: 100px; /*Высота заголовка*/
+      display:flex; /*Гибкий тип контейнера с информацией*/
+      justify-content: space-between; /*Распределяет элементы по краям*/
+      align-items: center;/*Выравнивание блоков по центру*/
+  }
+  nav a {
+      font-size: 20px;
+      margin-right: 20px; /*Отступ у кнопок навигации справа*/
+      color: black;
+      text-decoration: none; /*Убираем нижнее подчеркивание у ссылок*/
+  }
+  nav a:hover { /*Псевдокласс,срабатывающий только при наведении мышки на объект*/
+   text-decoration: underline;
+  /*border-bottom: 1px solid black;*/ /*Если нужно подчеркивание кнопок при наведении опустить ниже*/
+  }
+  .phone {
+    margin-right: 20px;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+  }
+  .Light-button {
+    border: 2px solid  rgb(11, 161, 180);
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: rgb(194, 235, 231); /*Цвет фона кнопки*/
+    padding: 12px 20px;
+    cursor: pointer; /*При наведении на кнопку курсор меняется на лапку(руку)*/
+    outline: none; /*Убирает внешнюю обводку кнопки при нажатии*/
+  }
+  .phone-block {
+    display: flex;
+    justify-content: flex-end; /*Выстраиваниетпо правому краю*/
+    align-items: center;
+  }
+  section {
+    height: 400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(194, 235, 231);
+  }
+  .About-myself {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 20px;
+  }
+  h1 {
+    font-size: 40px;
+  }
+  .About {
+    font-size: 20px;
+  }
+.Learn-more {
+    border: 1px solid rgb(11, 161, 180);
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: rgb(11, 161, 180); /*Цвет фона кнопки*/
+    padding: 7px 15px;
+    cursor: pointer; /*При наведении на кнопку курсор меняется на лапку(руку)*/
+    outline: none; /*Убирает внешнюю обводку кнопки при нажатии*/
+}
+  .BackPhoto {
+    height: 300px;
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background-image: url(lyudi-v-maskakh.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .services {
+    display: flex;
+    justify-content: space-between; /*Выравнивание контейнеров в ряд*/
+    margin-bottom: 40px;
+  }
+  .service-item {
+    width: 230px; /*Устанавливаем ширину картинок*/
+    height: 230px;
+    display: flex; /*Чтобы текст был расположен под картинкой*/
+    flex-direction: column; /*Расположение контейнеров колонкой*/
+    margin-bottom: 5px;
+  }
+  .works {
+    display: flex;
+    justify-content: space-between; /*Выравнивание контейнеров в ряд*/
+    margin-bottom: 40px;
+  }
+  .My-work {
+    width: 175px; /*Устанавливаем ширину картинок*/
+    height: 175px;
+    display: flex; /*Чтобы текст был расположен под картинкой*/
+    flex-direction: column; /*Расположение контейнеров колонкой*/
+    margin-bottom: 5px;
+  }
+  section4 {
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(11, 161, 180);
+    margin-top: 30px;
+  }
+  .Cost {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 20px;
+  }
+  h3 {
+    width: 800px;
+    padding-left: 20px;
+    font-size: 40px;
+  }
+  .Remark {
+    width: 800px;
+    padding-left: 20px;
+    font-size: 15px;
+  }
+    footer {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer-nav {
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .contacts {
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+  }
+  .email {
+      margin-bottom: 5px;
+      font-size: 20px;
+      color: black;
+      text-decoration: none; 
+  }
+  .popup-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    /*display: none;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3635f55c;
+  }
+  .close-icon {
+      float: right;
+      width: 20px;
+      height: 20px;
+      background-image: url('turnoff.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+  }
+  .popup {
+     min-width: 200px;
+     background-color: white;
+     border-radius: 5px;
+     padding: 10px;
+  }
+  .popup-fields{
+     display: flex;
+     flex-direction: column;
+     align-items: stretch;
+  }
+  .Send {
+    margin-top: 10px;
+     border: 2px solid  rgb(11, 161, 180);
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: rgb(194, 235, 231); /*Цвет фона кнопки*/
+    padding: 12px 20px;
+    cursor: pointer; /*При наведении на кнопку курсор меняется на лапку(руку)*/
+    outline: none; /*Убирает внешнюю обводку кнопки при нажатии*/
+  }
+  #send-button {
+
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+   <sсript type="text/javascript">
+   $(function(){
+      $('button').on('click',function(){
+          $('.popup-container').css('display','flex');
+      });
+      $('.close-icon').on('click',function(){
+          $('.popup-container').css('display','none');
+      });
+      $('#send-button').on('click',function(){
+        let data = $('.popup-fields').serializeArray();
+        console.log(data);
+        });
+   });
+   </skript>
+</head>
+<body>
+  <div class="popup-container"> 
+    <div class="popup"> 
+      <a href="#" class="close-icon"></a>
+      <h5>Отправить заявку</h5>
+        <form class="popup-fields">
+           <input type="text" placeholder="Ваше имя"></br>
+           <input type="text" placeholder="Ваше email"></br>
+           <input type="text" placeholder="Ваш телефон">
+        </form>
+       <button id="send-button" class="Send">Отправить</button>
+    </div>
+  </div>
+  <header>
+    <nav>
+      <a href="#">Услуги</a>
+      <a href="#">Портфолио</a>
+      <a href="#">Стоимость</a>
+    </nav>
+    <div class="phone-block">
+      <a class="phone" href="#">+7 904 213 03 82</a>
+      <button class="Light-button">Заказать звонок</button>
+    </div>
+  </header>
+  <section>
+    <div class="About-myself">
+      <h1>Екатерина Минец</h1>
+      <div class="About">Frontend-разработчик и веб-верстальщик</div></br>
+      <button class="Learn-more">Узнать больше</button>
+    </div>
+    <div class="BackPhoto"></div>
+    </div>
+  </section>
+  <section2>
+    <h2>Что я делаю</h2>
+    <div class="services">
+        <div class="service-item">
+          <img src="1.png">
+          Верстка лендинг-страниц и сайтов любой сложности
+        </div>
+        <div class="service-item">
+          <img src="2.png">
+          Адаптивная верстка под все браузеры и устройства
+        </div>
+        <div class="service-item">
+          <img src="3.png">
+          Frontend-разработка и программирование
+        </div>
+        <div class="service-item">
+          <img src="4.png">
+          Исправление и доработка существующей верстки
+        </div>
+    </div>
+    <button class="Light-button">Узнать стоимость</button>
+  </section2></br>
+  <section3>
+    <h2>Примеры моих работ</h2>
+    <div class="works">
+      <div class="My-work">
+        <img src="11.png">
+        Сайт грузоперевозок
+      </div>
+      <div class="My-work">
+        <img src="22.png">
+        Сайт Сбербанка
+      </div>
+      <div class="My-work">
+        <img src="33.png">
+        Сайт автозапчастей "Кореец"
+      </div>
+    </div>
+    <button class="Light-button">Заказать проект</button>
+  </section3></br>
+  <section4>
+    <div class="Cost-and-remark">
+    <div class="Cost">
+      <h3>Адаптивная верстка под все устройства и браузеры от 1000р всего за 4 часа.*</h3>
+      <div class="Remark">*Срок и стоимость могут отличаться от заданных и расчитываются индивидуально в зависимости от сложности задач.</div></br>
+    </div>
+    </div>
+  </section4>
+  <footer>
+      <nav class="footer-nav">
+        <a href="#">Услуги</a>
+        <a href="#">Портфолио</a>
+        <a href="#">Стоимость</a>
+    </nav>
+    <div class="contacts">
+        <a class="email" href="#">kata1-9-9-7@mail.ru</a>
+        <a class="phone" href="#">+7 904 213 03 82</a>
+    </div>
+    <div>
+        <button class="Light-button">Заказать звонок</button>
+        <div class="social-icons"></div>
+    </div>
+  </section5>
+</body>
+</html>
